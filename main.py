@@ -1,7 +1,7 @@
 #Dependencias do projeto
-import requests
-from bs4 import BeautifulSoup
-import tabulate
+import requests #Requests permite enviar solicitações HTTP/1.1 com extrema facilidade. Não há necessidade de adicionar strings de consulta manualmente aos seus URLs ou de codificar seus dados POST. Keep-alive e pool de conexão HTTP são 100% automáticos, graças a urllib3
+from bs4 import BeautifulSoup# Beautiful Soup é uma biblioteca Python para extrair dados de arquivos HTML e XML. Ele funciona com seu analisador favorito para fornecer formas idiomáticas de navegar, pesquisar e modificar a árvore de análise. Geralmente economiza horas ou dias de trabalho dos programadores.
+import tabulate #Biblioteca de manipulação de tabelas.
 
 
 headers = {'user-Agent': 'Mozila/5.0'} #Permite fazer o acesso ao servidor como se fosse um navegador web.

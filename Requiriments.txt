@@ -1,0 +1,4 @@
+#Lista as dependências a serem instaladas.
+requests
+beautifulsoup4
+tabulate

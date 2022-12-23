@@ -3,6 +3,7 @@ import requests #Requests permite enviar solicitações HTTP/1.1 com extrema fac
 from bs4 import BeautifulSoup# Beautiful Soup é uma biblioteca Python para extrair dados de arquivos HTML e XML. Ele funciona com seu analisador favorito para fornecer formas idiomáticas de navegar, pesquisar e modificar a árvore de análise. Geralmente economiza horas ou dias de trabalho dos programadores.
 import tabulate #Biblioteca de manipulação de tabelas.
 import locale
+import modelos
 from modelos import FundoImobiliario, Estrategia #importa a classe FundoImobiliário.
 
 locale.setlocale(locale.LC_ALL, "pt_BR.UTF-8") #Faz a conversão dos dados.
@@ -58,7 +59,13 @@ if estrategia.aplica_estrategia(fundo_imobiliario): #Se for verdadeiro adiciona 
 
 
 
+cabecalho=["CODIGO", "SEGUIMENTO", "COTAÇÃO ATUAL", "DIVIDEND YIELD" ]
+tabela = []
 
+for elemento in resultado:
+  tabela.append([elemento.codigo, elemento.seguimento, elemento.cotacao_atual, elemento.dividendo_yield])
+
+print(tabulate(tabela, headers = cabecalho, showindex = 'always', tablefmt = 'fancy-grid'))
     #dados_fundo = linha.find_all('td') #busca todas as células que estão dentro de cada linha.
     #print(
     #    f'[ {dados_fundo[2].text}]\n'
